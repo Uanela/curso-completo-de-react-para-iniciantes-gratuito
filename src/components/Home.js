@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import ProductsList from "./ProductsList";
 
 export default function Home() {
@@ -27,11 +27,6 @@ export default function Home() {
     const newProdutcts = products.filter((product) => product.id !== id);
     setProducts(newProdutcts);
   };
-
-  useEffect(() => {
-    console.log("useEffect executou");
-    console.log(products);
-  });
 
   return (
     <div className="home">
