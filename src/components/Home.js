@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import ProductsList from "./ProductsList";
 
 export default function Home() {
@@ -23,12 +23,22 @@ export default function Home() {
     },
   ]);
 
+  const handleDelete = (id) => {
+    const newProdutcts = products.filter((product) => product.id !== id);
+    setProducts(newProdutcts);
+  };
+
+  useEffect(() => {
+    console.log("useEffect executou");
+    console.log(products);
+  });
+
   return (
     <div className="home">
-      <ProductsList products={products} title="Todos Productos" />
       <ProductsList
-        products={products.filter((product) => product.worker === "Uanela")}
+        products={products}
         title="Todos Productos"
+        handleDelete={handleDelete}
       />
     </div>
   );
