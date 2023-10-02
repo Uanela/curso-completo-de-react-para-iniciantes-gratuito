@@ -43,3 +43,20 @@ main {
   margin: 40px auto;
   padding: 20px;
 }
+
+/* estilos para productos */
+.product-preview {
+  padding: 10px 16px;
+  margin: 20px 0;
+  border-bottom: 1px solid #3a3a3a;
+}
+
+.product-preview:hover {
+  box-shadow: 1px 3px 5px rgba(255, 255, 255, 0.1);
+}
+
+.product-preview h2 {
+  font-size: 20px;
+  color: var(--primary-color);
+  margin-bottom: 8px;
+}

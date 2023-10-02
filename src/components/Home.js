@@ -1,22 +1,35 @@
 import { useState } from "react";
 
 export default function Home() {
-  // let name = 'Uanela';
-  const [name, setName] = useState("Uanela");
-  const [age, setAge] = useState(30);
+  const [products, setProducts] = useState([
+    {
+      name: "Samsung S24 Ultra",
+      description: "producto teste adicionado",
+      worker: "Uanela",
+      id: 1,
+    },
+    {
+      name: "iPhone 15 Pro Max",
+      description: "producto teste adicionado",
+      worker: "Jobs",
+      id: 2,
+    },
+    {
+      name: "Xiaomi 13 Ultra",
+      description: "producto teste adicionado",
+      worker: "Buffet",
+      id: 3,
+    },
+  ]);
 
-  const handleClick = () => {
-    // name = 'Como';
-    setName("Como");
-    setAge(40);
-  };
   return (
     <div className="home">
-      <h2>Homepage</h2>
-      <p>
-        {name} tem {age} anos
-      </p>
-      <button onClick={handleClick}>Clique aqui</button>
+      {products.map((produtct) => (
+        <div className="product-preview" key={produtct.id}>
+          <h2>{produtct.name}</h2>
+          <p>Adicionado por {produtct.worker}</p>
+        </div>
+      ))}
     </div>
   );
 }
