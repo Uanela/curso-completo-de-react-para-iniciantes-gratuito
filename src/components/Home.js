@@ -23,6 +23,8 @@ export default function Home() {
     },
   ]);
 
+  const [name, setName] = useState("Uanela");
+
   const handleDelete = (id) => {
     const newProdutcts = products.filter((product) => product.id !== id);
     setProducts(newProdutcts);
@@ -30,8 +32,8 @@ export default function Home() {
 
   useEffect(() => {
     console.log("useEffect executou");
-    console.log(products);
-  });
+    console.log(name);
+  }, [name]);
 
   return (
     <div className="home">
@@ -40,6 +42,8 @@ export default function Home() {
         title="Todos Productos"
         handleDelete={handleDelete}
       />
+      <button onClick={() => setName("Como")}>Trocar nome</button>
+      <p>{name}</p>
     </div>
   );
 }
