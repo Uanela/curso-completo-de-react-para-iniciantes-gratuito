@@ -12,9 +12,9 @@ export default function Home() {
   return (
     <div className="home">
       <h2>Homepage</h2>
-      <button onClick={handleClick}>Click me</button>
+      <button onClick={handleClick}>Clique aqui</button>
       <button onClick={(e) => handleClickAgain("Uanela", e)}>
-        Click me again
+        Clique novamente
       </button>
     </div>
   );
