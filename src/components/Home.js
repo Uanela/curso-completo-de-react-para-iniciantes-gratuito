@@ -18,7 +18,7 @@ export default function Home() {
     {
       name: "Xiaomi 13 Ultra",
       description: "producto teste adicionado",
-      worker: "Buffet",
+      worker: "Uanela",
       id: 3,
     },
   ]);
@@ -26,6 +26,10 @@ export default function Home() {
   return (
     <div className="home">
       <ProductsList products={products} title="Todos Productos" />
+      <ProductsList
+        products={products.filter((product) => product.worker === "Uanela")}
+        title="Todos Productos"
+      />
     </div>
   );
 }
