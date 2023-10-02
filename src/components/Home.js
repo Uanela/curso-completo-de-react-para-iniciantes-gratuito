@@ -1,21 +1,22 @@
-import React from "react";
+import { useState } from "react";
 
 export default function Home() {
-  const handleClick = (e) => {
-    console.log("Olá Uanela", e);
-  };
+  // let name = 'Uanela';
+  const [name, setName] = useState("Uanela");
+  const [age, setAge] = useState(30);
 
-  const handleClickAgain = (name, e) => {
-    console.log("Olá " + name, e.target);
+  const handleClick = () => {
+    // name = 'Como';
+    setName("Como");
+    setAge(40);
   };
-
   return (
     <div className="home">
       <h2>Homepage</h2>
+      <p>
+        {name} tem {age} anos
+      </p>
       <button onClick={handleClick}>Clique aqui</button>
-      <button onClick={(e) => handleClickAgain("Uanela", e)}>
-        Clique novamente
-      </button>
     </div>
   );
 }
