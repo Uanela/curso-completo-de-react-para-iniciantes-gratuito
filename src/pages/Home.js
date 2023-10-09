@@ -1,6 +1,4 @@
 import ProductsList from "../components/ProductsList";
-import { faCircleNotch } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useFetch } from "../utils/useFetch";
 import ErrorMessage from "../components/ErrorMessage";
 import ProductsListSkeleton from "../components/ProductsListSkeleton";

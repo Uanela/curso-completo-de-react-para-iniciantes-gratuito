@@ -1,15 +1,26 @@
 import { useState } from "react";
+import { faCircleNotch } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function Create() {
   const [name, setName] = useState("");
   const [price, setPrice] = useState();
   const [description, setDescription] = useState("");
   const [worker, setWorker] = useState("Uanela");
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const product = { name, price, description, worker };
-    console.log(product);
+
+    setIsLoading(true);
+    setTimeout(() => {
+      fetch("http://localhost:8000/products", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(product),
+      }).then(() => setIsLoading(false));
+    }, 2000);
   };
 
   return (
@@ -41,7 +52,13 @@ export default function Create() {
           <option value="Uanela">Uanela</option>
           <option value="Como">Como</option>
         </select>
-        <button>Adicionar Producto</button>
+        <button disabled={isLoading}>
+          {isLoading ? (
+            <FontAwesomeIcon icon={faCircleNotch} className="loading-notch" />
+          ) : (
+            "Adicionar Producto"
+          )}
+        </button>
       </form>
     </div>
   );
