@@ -1,12 +1,12 @@
-import React from "react";
+import { Link } from "react-router-dom";
 
 export default function Navbar() {
   return (
     <nav className="navbar">
       <h1>SiGeStock</h1>
       <div>
-        <a href="/">Home</a>
-        <a href="/create">Novo producto</a>
+        <Link to="/">Home</Link>
+        <Link to="/create">Novo producto</Link>
       </div>
     </nav>
   );
