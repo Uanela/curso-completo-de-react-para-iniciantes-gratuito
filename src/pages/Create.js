@@ -6,10 +6,16 @@ export default function Create() {
   const [description, setDescription] = useState("");
   const [worker, setWorker] = useState("Uanela");
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const product = { name, price, description, worker };
+    console.log(product);
+  };
+
   return (
     <div className="create">
       <h2>Adicionar um Novo Producto</h2>
-      <form>
+      <form onSubmit={handleSubmit}>
         <label>Nome do producto:</label>
         <input
           type="text"
