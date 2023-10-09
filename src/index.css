@@ -112,6 +112,14 @@ main {
   margin-block: 20px;
 }
 
+.product-details button {
+  background-color: var(--primary-color);
+  border: 0;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
 .product-details .skeleton-loading h2,
 .product-details .skeleton-loading p {
   width: 50%;

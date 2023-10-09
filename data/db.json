@@ -13,13 +13,6 @@
       "worker": "Jobs",
       "price": 130000,
       "id": 2
-    },
-    {
-      "name": "Xiaomi 13 Ultra",
-      "description": "O Xiaomi 13 Ultra é a vanguarda da tecnologia na palma da sua mão. Com uma tela AMOLED de 6,5 polegadas com resolução 2K, câmera quádrupla de 108MP, e um poderoso processador Snapdragon 8 Gen 2, este smartphone redefine o que é possível. Com suporte para redes 5G, design elegante e uma bateria de longa duração, o Xiaomi 13 Ultra proporciona uma experiência de smartphone incomparável. Descubra um mundo de possibilidades com este dispositivo inovador da Xiaomi.",
-      "worker": "Uanela",
-      "price": 90000,
-      "id": 3
     }
   ]
 }

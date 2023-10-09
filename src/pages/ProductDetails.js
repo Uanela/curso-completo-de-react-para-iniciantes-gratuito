@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useFetch } from "../utils/useFetch";
 import ProductDetailsSkeleton from "../components/ProductDetailsSkeleton";
 
@@ -11,6 +11,13 @@ export default function ProductDetails() {
     error,
   } = useFetch("http://localhost:8000/products/" + id);
 
+  const navigate = useNavigate();
+  const handleDelete = () => {
+    fetch("http://localhost:8000/products/" + id, {
+      method: "DELETE",
+    }).then(() => navigate("/"));
+  };
+
   return (
     <div className="product-details">
       <div></div>
@@ -22,6 +29,7 @@ export default function ProductDetails() {
           <p>Preço: {product.price}</p>
           <p>Adicionado por {product.worker}</p>
           <div className="description">{product.description}</div>
+          <button onClick={handleDelete}>Apagar producto</button>
         </article>
       )}
     </div>
