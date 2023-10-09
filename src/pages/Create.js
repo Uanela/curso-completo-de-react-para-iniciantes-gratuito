@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { faCircleNotch } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useNavigate } from "react-router-dom";
 
 export default function Create() {
   const [name, setName] = useState("");
@@ -8,6 +9,7 @@ export default function Create() {
   const [description, setDescription] = useState("");
   const [worker, setWorker] = useState("Uanela");
   const [isLoading, setIsLoading] = useState(false);
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -19,7 +21,10 @@ export default function Create() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(product),
-      }).then(() => setIsLoading(false));
+      }).then(() => {
+        setIsLoading(false);
+        navigate("/");
+      });
     }, 2000);
   };
 
