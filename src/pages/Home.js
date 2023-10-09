@@ -2,6 +2,8 @@ import ProductsList from "../components/ProductsList";
 import { faCircleNotch } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useFetch } from "../utils/useFetch";
+import ErrorMessage from "../components/ErrorMessage";
+import ProductsListSkeleton from "../components/ProductsListSkeleton";
 
 export default function Home() {
   const {
@@ -13,16 +15,8 @@ export default function Home() {
 
   return (
     <div className="home">
-      {isError && (
-        <p className="error-message">
-          <span>!</span> {error.message}
-        </p>
-      )}
-      {isLoading && (
-        <div className="notch-container">
-          <FontAwesomeIcon icon={faCircleNotch} className="loading-notch" />
-        </div>
-      )}
+      {isError && <ErrorMessage message={error.message} />}
+      {isLoading && <ProductsListSkeleton title="Todos Productos" />}
       {products && <ProductsList products={products} title="Todos Productos" />}
     </div>
   );
